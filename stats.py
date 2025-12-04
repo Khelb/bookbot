@@ -5,11 +5,12 @@ def count_words(text):
 
 def character_counter(text):
     char_dict = {}
-    lower_case_string = text.lower()
-    sep_chars = list(lower_case_string)
-    for char in sep_chars:
-        if char in char_dict:
-            char_dict[char] += 1
+
+    for char in text:
+        lower_char = char.lower()
+        if lower_char in char_dict:
+            char_dict[lower_char] += 1
         else:
-            char_dict[char] = 1
+            char_dict[lower_char] = 1
+
     return char_dict
