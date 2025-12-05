@@ -3,11 +3,14 @@
   "packages": [
     "python@3.14.0",
     "basedpyright@latest",
-    "ruff@latest"
+    "ruff@latest",
+    "go"
   ],
   "shell": {
     "init_hook": [
-      ". $VENV_DIR/bin/activate"
+      ". $VENV_DIR/bin/activate",
+      "command -v bootdev >/dev/null || go install github.com/bootdotdev/bootdev@latest",
+      "export PATH=$PATH:$HOME/go/bin"
     ],
     "scripts": {
       "test": [
