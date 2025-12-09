@@ -21,17 +21,14 @@ def sort_on(items):
 
 
 def sorted_char_counter(dic):
-    dict_list = []
-    dict_char = {}
-    dict_count = {}
-    dict_comb = {}
+    sorted_list = []
 
     for key, value in dic.items():
-        dict_char["char"] = key
-        dict_count["num"] = value
-        dict_comb = dict_char | dict_count
-        dict_list.append(dict_comb)
+        new_dict = {}
+        new_dict["char"] = key
+        new_dict["num"] = value
+        sorted_list.append(new_dict)
 
-    dict_list.sort(reverse=True, key=sort_on)
+    sorted_list.sort(reverse=True, key=sort_on)
 
-    return dict_list
+    return sorted_list
